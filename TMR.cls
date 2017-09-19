@@ -6,16 +6,15 @@
 % Available for others' use under:
 % 
 
-% Last Updated: 18/09/2017
+% Last Updated: 19/09/2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Class identification & inheritance/delegation
+% Class identification & inheritance
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TMR}[2017/09/17 v0 TheMartianResume Package]
+\ProvidesClass{TMR}[2017/09/19 v1 TheMartianResume Package]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 \LoadClass{article}
-
 
 
 % Gain functionality from third party packages
@@ -31,14 +30,14 @@
 % Set up document to start
 \geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
 \renewcommand{\labelitemi}{\textendash}
-\setlist[itemize]{partopsep=0pt, topsep=0pt, itemsep=-3pt}
+\setlist[itemize]{partopsep=0pt, topsep=0pt, itemsep=-3pt, itemindent=-1em}
 \renewcommand{\headrulewidth}{0pt}
 \linespread{0.9}
-\fancyhf{}
 \pagestyle{fancy}
+\fancyhf{}
 
 
-% Get details from input
+% Get details from author input
 \newcommand*{\documenttitle}[1]{\def\@documenttitle{#1}}
 \newcommand*{\name}[1]{\def\@name{#1}}
 \newcommand*{\address}[1]{\def\@address{#1}}
@@ -56,11 +55,13 @@
 
 % Define styles for text
 \newcommand*{\pipe}{~~\textbar~~}
-\newcommand*{\nametext}[1]{\fontsize{48pt}{1em}\textbf{#1}}
+\newcommand*{\buff}{\vspace{4mm}}
+\newcommand*{\debuff}{\vspace{-5mm}}
+\newcommand*{\normaltext}{\fontsize{11pt}{1em}\color{darkgray}}
+\newcommand*{\nametext}[1]{\fontsize{48pt}{1em}\color{black}\textbf{#1}}
 \newcommand*{\accenttext}[1]{\fontsize{11pt}{1em}\color{darkgray}\textit{#1}}
 \newcommand*{\titletext}[1]{\fontsize{11pt}{1em}\color{black}\textbf{#1}}
 \newcommand*{\smalltext}[1]{\fontsize{9pt}{1em}\color{darkgray}\textnormal{#1}}
-\newcommand*{\normaltext}{\color{darkgray}}
 \newcommand*{\foottext}[1]{\fontsize{9pt}{1em}\color{black}\textsc{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,9 +90,7 @@
 	% Construct top & bottom matter
 	\tmrheader
 	\tmrfooter
-}{
-
-}
+}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THE LOWER-LEVEL TOP & BOTTOM MATTER
@@ -100,14 +99,21 @@
 % Makes page header from details
 \newcommand*{\tmrheader}{
 	\begin{center}
-	\nametext{\@name}\\
-	\vspace{1mm}\accenttext{\faicon{map-marker} \@address\quad\faicon{mobile} \@phone}\\
+	
+	% Author name
+	\nametext{\@name}\\\vspace{1mm}
+	
+	% Address & phone number
+	\accenttext{\faicon{map-marker}
+	\@address\quad\faicon{mobile} \@phone}\\
+	
+	% Social/online accounts
 	\smalltext{
 		\faicon{envelope} \@email \pipe
 		\faicon{home} \@homepage \pipe
 		\faicon{github-square} \@github \pipe
 		\faicon{linkedin-square} \@linkedin \pipe
-		\faicon{twitter} \@twitter
+		\faicon{twitter} \@twitter \linebreak
 	}	
 	\end{center}
 }
@@ -164,19 +170,18 @@
 \newenvironment{tmrsection}[1]{
 	\fontsize{16pt}{1em}\textbf{#1}\hrulefill\\
 	\par\nobreak
-}{
-}
+}{}
 
 
 % Makes an in-section subheading
 \newcommand*{\tmrsubsection}[1]{
-	\vspace{-4mm}\foottext{#1}\\
+	\debuff\foottext{#1}\\
 }
 
 
 % Makes a text block
 \newcommand*{\tmrtextentry}[1]{
-	\vspace{-5mm}\smalltext{#1}\vspace{4mm}
+	\debuff\smalltext{#1}\buff
 }
 
 
@@ -193,18 +198,20 @@
 % Makes four headers and a text block
 \newcommand*{\tmrdetailentry}[5]{
 	\tmrshortentry{#1}{#2}{#3}{#4}
-  	\smalltext{#5}\vspace{4mm}
+  	\smalltext{#5}\buff
 }
 
 
 % Makes four headers and an itemized list
 \newcommand*{\tmrlistentry}[5]{
-	\tmrshortentry{#1}{#2}{#3}{#4}\vspace{-5mm}
-  	\smalltext{\begin{itemize}#5\end{itemize}}\vspace{4mm}
+	\tmrshortentry{#1}{#2}{#3}{#4}\debuff
+  	\smalltext{\begin{itemize}#5\end{itemize}}\buff
 }
 
 
 % Makes three columns of short text
 \newcommand*{\tmrcolumnentry}[4]{
-	%============================================
+	\vspace{-8mm}\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0.8cm} p{12.2cm} p{3cm}}
+		\smalltext{#1} & \foottext{\textbf{#2}} \smalltext{#3} & \raggedleft\smalltext{\textit{#4}}\\
+	\end{tabular*}
 }

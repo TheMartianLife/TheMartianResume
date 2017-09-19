@@ -1,4 +1,4 @@
-# The Martian Resume
+# The Martian Résumé 
 **TMR** is a LaTeX template for a matching **Résumé & Cover Letter** pair, written with minimal interaction in mind. At the beginning of each file is a number of fields for author details, used to generate top- and bottom-matter, followed by a section for the body text or importation of sections. A quick no-fuss way to get simple documents for use anywhere you need to look good.
 
 This package was strongly influenced by (is really just a lightweight version of) **posquit0**'s [**Awesome-CV**](https://github.com/posquit0/Awesome-CV).
