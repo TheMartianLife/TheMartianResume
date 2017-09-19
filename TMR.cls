@@ -24,11 +24,14 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{parskip}
 \RequirePackage{xcolor}
+\RequirePackage{enumitem}
 \RequirePackage{fontawesome}
 
 
 % Set up document to start
 \geometry{left=2.0cm, top=1.5cm, right=2.0cm, bottom=2.0cm, footskip=.5cm}
+\renewcommand{\labelitemi}{\textendash}
+\setlist[itemize]{partopsep=0pt, topsep=0pt, itemsep=-3pt}
 \renewcommand{\headrulewidth}{0pt}
 \linespread{0.9}
 \fancyhf{}
@@ -58,7 +61,7 @@
 \newcommand*{\titletext}[1]{\fontsize{11pt}{1em}\color{black}\textbf{#1}}
 \newcommand*{\smalltext}[1]{\fontsize{9pt}{1em}\color{darkgray}\textnormal{#1}}
 \newcommand*{\normaltext}{\color{darkgray}}
-\newcommand*{\foottext}[1]{\fontsize{9pt}{1em}\textsc{#1}}
+\newcommand*{\foottext}[1]{\fontsize{9pt}{1em}\color{black}\textsc{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % THE HIGH-LEVEL DOCUMENT ENVIRONMENTS
@@ -83,11 +86,11 @@
 % Runs pre- & post-commands for resume doc
 \newenvironment{resume}{
 
-	% Construct topmatter
+	% Construct top & bottom matter
 	\tmrheader
-}{
-	% Construct bottom matter
 	\tmrfooter
+}{
+
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -167,13 +170,13 @@
 
 % Makes an in-section subheading
 \newcommand*{\tmrsubsection}[1]{
-
+	\vspace{-4mm}\foottext{#1}\\
 }
 
 
 % Makes a text block
 \newcommand*{\tmrtextentry}[1]{
-	\vspace{-5mm}\smalltext{#1}\\
+	\vspace{-5mm}\smalltext{#1}\vspace{4mm}
 }
 
 
@@ -190,11 +193,18 @@
 % Makes four headers and a text block
 \newcommand*{\tmrdetailentry}[5]{
 	\tmrshortentry{#1}{#2}{#3}{#4}
-  	\smalltext{#5}\\	
+  	\smalltext{#5}\vspace{4mm}
+}
+
+
+% Makes four headers and an itemized list
+\newcommand*{\tmrlistentry}[5]{
+	\tmrshortentry{#1}{#2}{#3}{#4}\vspace{-5mm}
+  	\smalltext{\begin{itemize}#5\end{itemize}}\vspace{4mm}
 }
 
 
 % Makes three columns of short text
-\newcommand*{\tmrlistentry}[4]{
-
+\newcommand*{\tmrcolumnentry}[4]{
+	%============================================
 }
