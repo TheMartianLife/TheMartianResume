@@ -12,3 +12,4 @@ This package was strongly influenced by (is really just a lightweight version of
 - Learn about Makefiles or the {subfiles} package: *Make one .tex file that splits and generates both Résumé & Cover Letter*
 - Check compatibility of FontAwesome usage on others' machines
 - License *License* **LICENSE**
+- Extend \begin{document} to take one argument and begin coverletter or resume environment
