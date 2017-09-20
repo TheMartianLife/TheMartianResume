@@ -4,14 +4,14 @@
 % http://github.com/TheMartianLife/Resume
 
 % Available for others' use under:
-% 
+% The MIT License (https://opensource.org/licenses/MIT)
 
-% Last Updated: 19/09/2017
+% Last Updated: 20/09/2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Class identification & inheritance
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TMR}[2017/09/19 v1 TheMartianResume Package]
+\ProvidesClass{TMR}[2017/09/20 v1 TheMartianResume Package]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 \LoadClass{article}
