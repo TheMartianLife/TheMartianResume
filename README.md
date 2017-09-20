@@ -4,9 +4,9 @@
 This package was strongly influenced by (is really just a very lightweight version of) **posquit0**'s [**Awesome-CV**](https://github.com/posquit0/Awesome-CV).
 
 # Preview
-| Cover Letter | Resume |
-|:---:|:---:|
-| [![Cover Letter](/examples/coverletter.png?raw=true)](examples/coverletter-example.pdf) | [![Résumé](/examples/resume1.png?raw=true)](examples/resume-example.pdf) |
+| Cover Letter | Resume Page 1 | Resume Page 2 |
+|:---:|:---:|:---:|
+| [![Cover Letter](/examples/coverletter.png?raw=true)](examples/coverletter-example.pdf) | [![Résumé Page 1](/examples/resume1.png?raw=true)](examples/resume-example.pdf) | [![Résumé Page 2](/examples/resume2.png?raw=true)](examples/resume-example.pdf) |
 
 # Usage
 This package uses [**The MIT License**](https://opensource.org/licenses/MIT). 
