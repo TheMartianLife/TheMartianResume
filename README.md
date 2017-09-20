@@ -9,7 +9,9 @@ This package was strongly influenced by (is really just a very lightweight versi
 | [![Cover Letter](/examples/coverletter.png?raw=true)](examples/coverletter-example.pdf) | [![Résumé Page 1](/examples/resume1.png?raw=true)](examples/resume-example.pdf) | [![Résumé Page 2](/examples/resume2.png?raw=true)](examples/resume-example.pdf) |
 
 # Usage
-This package uses The MIT License (https://opensource.org/licenses/MIT). 
+This package uses [The MIT License](https://opensource.org/licenses/MIT). 
+
+It requires the [**geometry**](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/geometry/geometry.pdf), [**fancyhdr**](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/fancyhdr/fancyhdr.pdf), [**parskip**](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/parskip/parskip-doc.pdf), [**xcolor**](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/xcolor/xcolor.pdf), [**enumitem**](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/enumitem/enumitem.pdf) & [**fontawesome**](http://mirror.aarnet.edu.au/pub/CTAN/fonts/fontawesome/doc/fontawesome.pdf) packages, all of which use [The LATEX Project Public License (LPPL)](http://www.latex-project.org/lppl), along with the [import](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/import/import.pdf) package, which is Public Domain.
 
 # TODO
 - Learn about Makefiles or the {subfiles} package: *Make one .tex file that splits and generates both Résumé & Cover Letter*
