@@ -104,16 +104,18 @@
 	\nametext{\@name}\\\vspace{1mm}
 	
 	% Address & phone number
-	\accenttext{\faicon{map-marker}
-	\@address\quad\faicon{mobile} \@phone}\\
+	\ifdefined\@address{\accenttext{\faicon{map-marker} \@address}}\fi
+	\quad
+	\ifdefined\@phone{\accenttext{\faicon{mobile} \@phone}}\fi
 	
 	% Social/online accounts
 	\smalltext{
-		\faicon{envelope} \@email \pipe
-		\faicon{home} \@homepage \pipe
-		\faicon{github-square} \@github \pipe
-		\faicon{linkedin-square} \@linkedin \pipe
-		\faicon{twitter} \@twitter \linebreak
+		\ifdefined\@email{\faicon{envelope} \@email}\fi
+		\ifdefined\@homepage{\pipe \faicon{home} \@homepage}\fi
+		\ifdefined\@github{\pipe \faicon{github-square} \@github}\fi
+		\ifdefined\@linkedin{\pipe \faicon{linkedin-square} \@linkedin}\fi
+		\ifdefined\@twitter{\pipe \faicon{twitter} \@twitter}\fi
+		 \linebreak
 	}	
 	\end{center}
 }
