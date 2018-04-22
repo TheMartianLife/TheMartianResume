@@ -1,0 +1,39 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TMR Main File: resume.tex
+% Author: Marina Rose "Mars" Geldard
+% http://github.com/TheMartianLife/Resume
+
+% Available for others' use under:
+% The MIT License (https://opensource.org/licenses/MIT)
+
+% Last Updated: 20/09/2017
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+\documentclass[11pt, a4paper]{TMR}
+\usepackage{import}
+
+% Author details
+\name{Author Name}
+\address{Street Address, Suburb, State, Postcode}
+\phone{+0 (0) 000 000 000} 
+\email{example@temailaddress.com}
+\homepage{webhomepage.com}
+\github{github-handle}
+\linkedin{linkedin-handle}
+\twitter{twitter-handle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{resume}
+
+% Import any number of sections
+% This will dictate the order in which they display
+\import{sections/}{section-1.tex}
+\import{sections/}{section-2.tex}
+\import{sections/}{section-3.tex}
+\import{sections/}{section-4.tex}
+\import{sections/}{section-5.tex}
+
+\end{resume}
+\end{document}
