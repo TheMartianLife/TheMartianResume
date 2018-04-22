@@ -4,14 +4,14 @@
 % http://github.com/TheMartianLife/Resume
 
 % Available for others' use under:
-% The MIT License (https://opensource.org/licenses/MIT)
+% 
 
-% Last Updated: 20/09/2017
+% Last Updated: 19/09/2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Class identification & inheritance
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{TMR}[2017/09/20 v1 TheMartianResume Package]
+\ProvidesClass{TMR}[2017/09/19 v1 TheMartianResume Package]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 \LoadClass{article}
@@ -25,6 +25,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{enumitem}
 \RequirePackage{fontawesome}
+\RequirePackage{pdfpages}
 
 
 % Set up document to start
@@ -104,18 +105,16 @@
 	\nametext{\@name}\\\vspace{1mm}
 	
 	% Address & phone number
-	\ifdefined\@address{\accenttext{\faicon{map-marker} \@address}}\fi
-	\quad
-	\ifdefined\@phone{\accenttext{\faicon{mobile} \@phone}}\fi
+	\accenttext{\faicon{map-marker}
+	\@address\quad\faicon{mobile} \@phone}\\
 	
 	% Social/online accounts
 	\smalltext{
-		\ifdefined\@email{\faicon{envelope} \@email}\fi
-		\ifdefined\@homepage{\pipe \faicon{home} \@homepage}\fi
-		\ifdefined\@github{\pipe \faicon{github-square} \@github}\fi
-		\ifdefined\@linkedin{\pipe \faicon{linkedin-square} \@linkedin}\fi
-		\ifdefined\@twitter{\pipe \faicon{twitter} \@twitter}\fi
-		 \linebreak
+		\faicon{envelope} \@email \pipe
+		\faicon{home} \@homepage \pipe
+		\faicon{github-square} \@github \pipe
+		\faicon{linkedin-square} \@linkedin \pipe
+		\faicon{twitter-square} \@twitter \linebreak
 	}	
 	\end{center}
 }
@@ -216,4 +215,17 @@
 	\vspace{-8mm}\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} p{0.8cm} p{12.2cm} p{3cm}}
 		\smalltext{#1} & \foottext{\textbf{#2}} \smalltext{#3} & \raggedleft\smalltext{\textit{#4}}\\
 	\end{tabular*}
+}
+
+% Redact information for public consumption
+\newif\ifpublicversion
+\newcommand{\public}{
+	\publicversiontrue
+}
+
+\newcommand{\private}[1]{
+	\ifpublicversion[redacted]\else#1\fi
+}
+\newcommand{\reference}[1]{
+	\ifpublicversion\else\includepdf{#1}\fi
 }
