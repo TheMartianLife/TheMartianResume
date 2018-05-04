@@ -24,6 +24,7 @@
 \RequirePackage{fontawesome}
 \RequirePackage{import}
 \RequirePackage[hidelinks]{hyperref}
+\RequirePackage{environ}
 \RequirePackage{xparse}
 \RequirePackage[explicit]{titlesec}
 
@@ -75,16 +76,19 @@
 }
 
 % Runs pre- & post-commands for coverletter doc
-\newenvironment{coverletter}{
+\NewEnviron{coverletter}{
 	\ifcoverletter
 		% Construct topmatter
 		\tmrheader
 		\hrulefill
 		\tmrtitle
 		\thispagestyle{empty}
-		}{
+		
+		\BODY
+		
 		% Construct bottom matter
 		\tmrclosing
+	\fi
 }
 
 
