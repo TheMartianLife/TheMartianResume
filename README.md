@@ -12,8 +12,8 @@ This package was strongly influenced by (is really just a very lightweight versi
 This package uses [**The MIT License**](https://opensource.org/licenses/MIT).
 
 It requires the [geometry](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/geometry/geometry.pdf), [fancyhdr](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/fancyhdr/fancyhdr.pdf), [fontawesome](http://mirror.aarnet.edu.au/pub/CTAN/fonts/fontawesome/doc/fontawesome.pdf) [hyperref](http://ftp.math.purdue.edu/mirrors/ctan.org/macros/latex/contrib/hyperref/doc/manual.pdf), [parskip](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/parskip/parskip-doc.pdf), [pdfpages](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/pdfpages/pdfpages.pdf),
-[titlesec](http://mirror.lagoon.nc/pub/ctan/macros/latex/contrib/titlesec/titlesec.pdf), &
-[xparse](http://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/l3packages/xparse.pdf) & packages, all of which use [**The LATEX Project Public License**](http://www.latex-project.org/lppl) (LPPL), along with the [import](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/import/import.pdf) package, which is **Public Domain**.
+[titlesec](http://mirror.lagoon.nc/pub/ctan/macros/latex/contrib/titlesec/titlesec.pdf) &
+[xparse](http://ctan.math.utah.edu/ctan/tex-archive/macros/latex/contrib/l3packages/xparse.pdf) packages, all of which use [**The LATEX Project Public License**](http://www.latex-project.org/lppl) (LPPL), along with the [import](http://mirror.aarnet.edu.au/pub/CTAN/macros/latex/contrib/import/import.pdf) package, which is **Public Domain**.
 
 # TODO
 - Learn about Makefiles or the {subfiles} package: *Make one .tex file that splits and generates both Résumé & Cover Letter using the same author details section*
